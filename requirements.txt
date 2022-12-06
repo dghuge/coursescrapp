@@ -1,17 +1,15 @@
 beautifulsoup4==4.11.1
 bs4==0.0.1
-certifi @ file:///C:/b/abs_ac29jvt43w/croot/certifi_1665076682579/work/certifi
 charset-normalizer==2.1.1
-click @ file:///C:/ci/click_1646056799533/work
-colorama @ file:///C:/Windows/TEMP/abs_9439aeb1-0254-449a-96f7-33ab5eb17fc8apleb4yn/croots/recipe/colorama_1657009099097/work
+click
+colorama
 dnspython==2.2.1
-Flask @ file:///C:/ci/flask_1658841820988/work
+Flask
 Flask-Cors==3.0.10
 idna==3.4
-importlib-metadata @ file:///C:/ci/importlib-metadata_1648544472910/work
-itsdangerous @ file:///tmp/build/80754af9/itsdangerous_1621432558163/work
-Jinja2 @ file:///C:/b/abs_7cdis66kl9/croot/jinja2_1666908141852/work
-MarkupSafe @ file:///C:/ci/markupsafe_1654489871526/work
+itsdangerous
+Jinja2 
+MarkupSafe
 mysql-connector-python==8.0.31
 protobuf==3.20.1
 pymongo==4.3.3
@@ -19,6 +17,5 @@ requests==2.28.1
 six==1.16.0
 soupsieve==2.3.2.post1
 urllib3==1.26.13
-Werkzeug @ file:///opt/conda/conda-bld/werkzeug_1645628268370/work
+Werkzeug
 wincertstore==0.2
-zipp @ file:///C:/ci/zipp_1652274073489/work
