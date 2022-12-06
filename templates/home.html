@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <script src="https://kit.fontawesome.com/a7df7738d4.js" crossorigin="anonymous"></script>
+</header>
+<body>
+    <header class="header">
+		<h1 class="logo"><a href="/">Scrapper</a></h1>
+	</header>
+    <form action="/details" method = 'POST'>
+        <div class="wrap">
+           <div class="search">
+              <input type="text" class="searchTerm" placeholder="Type course name..." name = 'content'>
+              <button type="submit" class="searchButton">
+                <i class="fa fa-search"></i>
+             </button>
+           </div>
+        </div>
+    </form>
+</body>
+</html>

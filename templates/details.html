@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Review Page</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/details.css') }}">
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="logo"><a href = '/'>Scrapper</a></h1>
+      <!--<ul class="main-nav">
+          <li>
+              <form action="/details/savejson" method = 'POST'>
+                <button>Save as Json</button>
+              </form>
+          </li>
+      </ul>-->
+    </header>
+    <div class="table-users">
+    <table cellspacing="0" class="styled-table">
+      <tr>
+         <th>Course Name</th>
+         <th>Price</th>
+         <th>Mode</th>
+         <th>You will learn</th>
+         <th width="230">Description</th>
+      </tr>
+         {% for course in data_extract %}
+      <tr>
+          <td><a href = {{course['courseLink']}}>{{course['courseName']}}</a></td>
+         <td>{{course['price']['IN']}}</td>
+         <td>{{course['mode']}}</td>
+         {% set learn = course['toLearn'] %}
+         <!--<td>{{course['toLearn']}}</td>-->
+         <td>
+             <ul>
+                {% for topic in learn %}
+                <li>{{topic}}</li>
+                {% endfor %}
+             </ul>
+         </td>
+         <td>{{course['description']}} </td>
+      </tr>
+       {% endfor %}
+    </table>
+    </div>
+</body>
+
+</html>
