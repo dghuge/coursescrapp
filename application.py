@@ -7,7 +7,7 @@ from flask_cors import CORS, cross_origin
 from utils import *
 import requests
 
-app = Flask(__name__)
+application = app = Flask(__name__)
 
 # variable to store final extracted data
 data_extract = ''
@@ -77,4 +77,4 @@ def saveJson():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    application.run(debug=True)
