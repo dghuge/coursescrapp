@@ -5,7 +5,7 @@ import mysql.connector as con
 import logging
 from utils import *
 import os
-
+from decouple import config
 
 '''This class performs various db and local file operations, like connect, save etc'''
 class dbOps:
@@ -20,8 +20,8 @@ class dbOps:
         try :
             logging.info(f'connecting to db {dbname}')
             # read config details like username, password for database
-            user = os.environ.get('user')
-            password = os.environ.get('pass')
+            user = config('user')
+            password = config('pass')
             if user == None or password == None:
                 logging.info('Unable to find config details')
             db = None

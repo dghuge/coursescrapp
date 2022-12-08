@@ -19,3 +19,4 @@ soupsieve==2.3.2.post1
 urllib3==1.26.13
 Werkzeug
 wincertstore==0.2
+python-decouple
