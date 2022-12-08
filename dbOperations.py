@@ -4,14 +4,14 @@ import pymongo
 import mysql.connector as con
 import logging
 from utils import *
+import os
 
 
 '''This class performs various db and local file operations, like connect, save etc'''
 class dbOps:
 
     # set the config path and log activities
-    def __init__(self,config_path):
-        self.config = config_path
+    def __init__(self):
         logging.basicConfig(filename = 'scrapper.log',level = logging.INFO, format = '%(asctime)s %(levelname)s %(message)s')
 
 
@@ -20,13 +20,9 @@ class dbOps:
         try :
             logging.info(f'connecting to db {dbname}')
             # read config details like username, password for database
-            with open(self.config) as f:
-                settings = eval(f.read())
-                dbconfig = settings.get(dbname)
-                user = dbconfig.get('user')
-                password = dbconfig.get('pass')
-                dbOps.localpath = dbconfig.get('save')
-            if user == '' or password == '':
+            user = os.environ.get('user')
+            password = os.environ.get('pass')
+            if user == None or password == None:
                 logging.info('Unable to find config details')
             db = None
             # connect to database
@@ -35,7 +31,7 @@ class dbOps:
             # for future scope
             elif dbname.casefold() == 'sql':
                 db = con.connect(host = host, user = user,passwd = password)
-            if db != '':
+            if db != None:
                 logging.info("Connected to Database successfully")
             return db
         except Exception as e:

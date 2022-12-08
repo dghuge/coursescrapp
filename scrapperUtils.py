@@ -20,7 +20,7 @@ class scrapper:
 
     # set db instance and search query to use throught the methods
     def __init__(self):
-        self.db = dbOps(CONFIG_PATH)
+        self.db = dbOps()
         self.searchQuery = ''
 
         # log all activities inside the class

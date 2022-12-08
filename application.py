@@ -14,14 +14,14 @@ data_extract = ''
 
 
 # Display homepage
-@app.route('/', methods=['GET'])
+@application.route('/', methods=['GET'])
 @cross_origin()
 def homepage():
     return render_template('home.html')
 
 
 # Display details
-@app.route('/details', methods=['GET', 'POST'])
+@application.route('/details', methods=['GET', 'POST'])
 @cross_origin()
 def details():
 
@@ -34,8 +34,8 @@ def details():
     # creating instance of scrapper and db class to use its methods
     sc = scrapper()
 
-    # CONFIG PATH to store db credential and local file path for save
-    db = dbOps(CONFIG_PATH)
+    # Create instance of DB class
+    db = dbOps()
 
     # check if course details already exist in scrapped database
     db_course_data = db.checkDB(searchstring)
@@ -62,7 +62,7 @@ def details():
 
 
 # save json file to local path
-@app.route('/details/savejson', methods=['POST'])
+@application.route('/details/savejson', methods=['POST'])
 @cross_origin()
 def saveJson():
     try:
